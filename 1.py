@@ -1,26 +1,19 @@
 from graph import *
 
-# Заливка всего окна 500х600
-brushColor("White")
-rectangle(0,0,500,600)
+x0 = 150; y0 = 250; k = 50
+xmin = -2; xmax = 2
 
-#Голова
-penColor("Black")
-brushColor("Yellow")
-circle(250, 300, 150)
-
-#Глаза
-brushColor("Red")
-circle(180, 250, 40)
-circle(320, 250, 32)
-brushColor("Black")
-circle(180, 250, 10)
-circle(320, 250, 10)
-
-#Брови и рот
-polygon([(140, 140), (150, 130), (240, 240), (235,250), (140, 140)])
-rectangle(170, 350, 330, 370)
-
-polygon([(270, 240), (275, 245), (390, 165), (380, 140), (270, 240)])
+windowSize(400, 400)
+line(0, y0, x0+150, y0);
+line(x0, 0, x0, y0+20); 
+x = xmin 
+h = 0.02
+penColor("red")
+while x <= xmax:
+  y = x*x
+  xe = x0 + k*x
+  ye = y0 - k*y
+  point(xe, ye)
+  x += h 
 
 run() 
